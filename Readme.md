@@ -9,7 +9,7 @@
 
    ## How to install node_modules packages:
 
-    ** npm  install **
+     npm  install 
 
 
    ## Scripts:
@@ -22,7 +22,7 @@
 	
    ## Instructions:
 	
-	** follow this **
+	  follow this 
 	 *"http://localhost:3000/api/images?imagename=filename&height=+integer&width=+integer"
 	 
 	 
