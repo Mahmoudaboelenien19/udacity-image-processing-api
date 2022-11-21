@@ -24,7 +24,7 @@
    ## Instructions:
 	
 	  follow this 
-	 *"http://localhost:3000/api/images?imagename=filename&height=+integer&width=+integer"
+	 "http://localhost:3000/api/images?imagename=filename&height=+integer&width=+integer"
 	 
 	 
    ## Images Available:
