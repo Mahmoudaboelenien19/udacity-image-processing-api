@@ -26,7 +26,7 @@
 	 *"http://localhost:3000/api/images?imagename=filename&height=+integer&width=+integer"
 	 
 	 
-    ## Images available:
+    ## Images Available:
 	 
 	1. encenadaport
 	2. fjord
