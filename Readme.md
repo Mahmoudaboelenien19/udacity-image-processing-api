@@ -1,7 +1,8 @@
    ## Introduction:
 
-    this is the first project Image Processig Api
-    I  use to build this project:
+   this is the first project Image Processig Api 
+   
+   I  use to build this project:-   
       1. TypeScript to compile to JavaScript
       2. Jasmine is used for unit testing
       3. Eslint and prettier to get better code
