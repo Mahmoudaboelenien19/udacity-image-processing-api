@@ -15,7 +15,9 @@
      npm  install 
 
 
-    ## URL Example:
+
+
+   ## URL Example
     
      http://localhost:3000/api/images?imagename=icelandwaterfall&height=200&width=200
      
