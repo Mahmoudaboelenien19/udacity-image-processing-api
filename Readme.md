@@ -15,26 +15,23 @@
      npm  install 
 
 
-
-
    ## URL Example
     
-     <http://localhost:3000/api/images?imagename=icelandwaterfall&height=200&width=200/>
      
    ## How to resize :
     
-    1. make sure that the requested image is inside images folder.
-    2. in url add for imagename(the image you want to resize),width(the new image width),height(the new 
+   * make sure that the requested image is inside images folder.
+    * in url add for imagename(the image you want to resize),width(the new image width),height(the new 
     image height) 
-    3. if image is not found, you will get a message to tell you  that image name isn't available.
-    4. if image height is not added or less than 1 ,you will get a message to tell you please put a correct 
+    for example (http://localhost:3000/api/images?imagename=icelandwaterfall&height=200&width=200)
+    * if image is not found, you will get a message to tell you  that image name isn't available.
+    * if image height is not added or less than 1 ,you will get a message to tell you please put a correct 
     height value .
-    5. if image width is not added or less than 1 ,you will get a message to tell you please put a correct 
+    * if image width is not added or less than 1 ,you will get a message to tell you please put a correct 
     width value.
-    6. if image is successfully resized ,you will get a message inside console to tell you the `imagename`
-    is saved 
-    for this example ``icelandwaterfall-200-200.jpg`` is saved.
-    7. if the requested image has been already resized, you will get a message inside console to tell you 
+    * if image is successfully resized ,you will get a message inside console to tell you the `imagename`
+    is saved  for this example ``icelandwaterfall-200-200.jpg`` is saved.
+    * if the requested image has been already resized, you will get a message inside console to tell you 
     `imagename` is cached for this example icelandwaterfall-200-200.jpg is cashed.
 
    
