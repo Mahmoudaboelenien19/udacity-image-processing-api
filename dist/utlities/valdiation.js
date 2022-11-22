@@ -18,13 +18,13 @@ const valdiationFn = (req, res) => {
     if (!fs_1.default.existsSync(imagePath)) {
         res.status(400).send("that image name isn't available");
     }
-    else if (+height <= 0 || height == undefined) {
+    else if (+height <= 0 || height == undefined || isNaN(parseInt(height))) {
         /* check if requested height is valid */
-        res.status(400).send('please put a correct height value');
+        res.status(400).send('please put a positive integer for height');
     }
-    else if (+width <= 0 || width == undefined) {
+    else if (+width <= 0 || width == undefined || isNaN(parseInt(width))) {
         /* check if requested width  is valid */
-        res.status(400).send('please put a correct width value');
+        res.status(400).send('please put a positive integer for width');
     }
     else if (fs_1.default.existsSync(resizedImgPath)) {
         /* check if requested size of image is cached */
@@ -32,10 +32,9 @@ const valdiationFn = (req, res) => {
         console.log(`${resizedImgName} is cached`);
     }
     else {
-        (0, resizing_1.default)(imagename, imagePath, +width, +height, resizedImgPath);
-        setTimeout(() => {
+        (0, resizing_1.default)(imagename, imagePath, +width, +height, resizedImgPath).then(() => {
             res.sendFile(resizedImgPath);
-        }, 400);
+        });
     }
 };
 exports.default = valdiationFn;

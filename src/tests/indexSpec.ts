@@ -26,7 +26,7 @@ describe('test validation ', () => {
     const response = await request.get(
       '/api/images?imagename=icelandwaterfall&height&width=100'
     );
-    expect(response.text).toBe('please put a correct height value');
+    expect(response.text).toBe('please put a positive integer for height');
   });
 
   it('wrong width', async () => {
@@ -34,7 +34,7 @@ describe('test validation ', () => {
       '/api/images?imagename=icelandwaterfall&height=100&width'
     );
 
-    expect(response.text).toBe('please put a correct width value');
+    expect(response.text).toBe('please put a positive integer for width');
   });
 });
 
