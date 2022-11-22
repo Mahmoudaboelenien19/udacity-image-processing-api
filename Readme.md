@@ -35,7 +35,7 @@
     is saved 
     for this example ``icelandwaterfall-200-200.jpg`` is saved.
     7. if the requested image has been already resized, you will get a message inside console to tell you 
-    `imagename` is cached for this example <mark> icelandwaterfall-200-200.jpg </mark> is cashed.
+    `imagename` is cached for this example <span> icelandwaterfall-200-200.jpg </span> is cashed.
 
    
    
