@@ -19,7 +19,7 @@
 
    ## URL Example
     
-     <a>http://localhost:3000/api/images?imagename=icelandwaterfall&height=200&width=200</a>
+     <http://localhost:3000/api/images?imagename=icelandwaterfall&height=200&width=200>
      
    ## How to resize :
     
