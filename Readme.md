@@ -12,7 +12,9 @@
 
      npm  install 
 
-
+   ### the end point "/api" is the home page.
+   ### the end point "/api/images" is the home page is where image is processing.
+   
    ## How to resize :
     
    1. make sure that the requested image is inside images folder.
