@@ -1,6 +1,8 @@
    ## Introduction:
 
    this is the first project Image Processig Api 
+   an example 
+   http://localhost:3000/api/images?imagename=icelandwaterfall&height=200&width=200
    
    I  use to build this project:-    
    
