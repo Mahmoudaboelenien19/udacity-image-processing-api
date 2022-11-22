@@ -19,7 +19,7 @@
 
    ## URL Example
     
-     http://localhost:3000/api/images?imagename=icelandwaterfall&height=200&width=200
+     <a>http://localhost:3000/api/images?imagename=icelandwaterfall&height=200&width=200</a>
      
    ## How to resize :
     
@@ -35,7 +35,7 @@
     is saved 
     for this example ``icelandwaterfall-200-200.jpg`` is saved.
     7. if the requested image has been already resized, you will get a message inside console to tell you 
-    `imagename` is cached for this example ==icelandwaterfall-200-200.jpg== is cashed.
+    `imagename` is cached for this example icelandwaterfall-200-200.jpg is cashed.
 
    
    
