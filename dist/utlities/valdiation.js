@@ -5,7 +5,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const fs_1 = __importDefault(require("fs"));
 const path_1 = __importDefault(require("path"));
-const valdiationFn = (req, res, next) => {
+const resizing_1 = __importDefault(require("./resizing"));
+const valdiationFn = (req, res) => {
     const imagename = req.query.imagename;
     const width = req.query.width;
     const height = req.query.height;
@@ -31,14 +32,10 @@ const valdiationFn = (req, res, next) => {
         console.log(`${resizedImgName} is cached`);
     }
     else {
-        res.locals.data = {
-            height,
-            resizedImgPath,
-            width,
-            imagePath,
-            resizedImgName,
-        };
-        next();
+        (0, resizing_1.default)(imagename, imagePath, +width, +height, resizedImgPath);
+        setTimeout(() => {
+            res.sendFile(resizedImgPath);
+        }, 400);
     }
 };
 exports.default = valdiationFn;

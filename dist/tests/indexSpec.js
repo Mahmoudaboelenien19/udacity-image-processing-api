@@ -12,8 +12,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+const path_1 = __importDefault(require("path"));
+const fs_1 = __importDefault(require("fs"));
 const supertest_1 = __importDefault(require("supertest"));
 const index_1 = __importDefault(require("../index"));
+const resizing_1 = __importDefault(require("../utlities/resizing"));
 const request = (0, supertest_1.default)(index_1.default);
 describe('test home page route', () => {
     it('test', () => __awaiter(void 0, void 0, void 0, function* () {
@@ -37,9 +40,12 @@ describe('test validation ', () => {
         expect(response.text).toBe('please put a correct width value');
     }));
 });
-describe("check resizing an image", () => {
-    it("resizing is done", () => __awaiter(void 0, void 0, void 0, function* () {
-        const response = yield request.get('/api/images?imagename=icelandwaterfall&height=100&width=100');
-        expect(response.status).toBe(200);
+describe('check resizing an image', () => {
+    it('resizing is done', () => __awaiter(void 0, void 0, void 0, function* () {
+        const imagename = 'icelandwaterfall';
+        const imgpath = path_1.default.normalize(__dirname + `../../../images/${imagename}.jpg`);
+        const resizedimgpath = path_1.default.normalize(__dirname + `../../../thumbnail/${imagename}-500-500.jpg`);
+        yield (0, resizing_1.default)(imagename, imgpath, 500, 500, resizedimgpath);
+        expect(fs_1.default.existsSync(resizedimgpath)).toBeTruthy();
     }));
 });

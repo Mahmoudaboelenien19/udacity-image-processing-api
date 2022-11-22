@@ -1,19 +1,24 @@
 import express from 'express';
 import fs from 'fs';
 import path from 'path';
+import resizeWithSharp from './resizing';
 
-const valdiationFn = (
-  req: express.Request,
-  res: express.Response,
-  next: express.NextFunction
-) => {
+const valdiationFn = (req: express.Request, res: express.Response) => {
   const imagename = req.query.imagename as unknown as string;
   const width = req.query.width as unknown as string;
   const height = req.query.height as unknown as string;
-  const imagePath = path.resolve(__dirname, `../../images/${imagename}.jpg`)as unknown as string;
-  const resizedFolder = path.resolve(__dirname, `../../thumbnail`)as unknown as string;
-  const resizedImgName = `${imagename}-${height}-${width}.jpg`as unknown as string;
-  const resizedImgPath = `${resizedFolder}/${resizedImgName}`as unknown as string;
+  const imagePath = path.resolve(
+    __dirname,
+    `../../images/${imagename}.jpg`
+  ) as unknown as string;
+  const resizedFolder = path.resolve(
+    __dirname,
+    `../../thumbnail`
+  ) as unknown as string;
+  const resizedImgName =
+    `${imagename}-${height}-${width}.jpg` as unknown as string;
+  const resizedImgPath =
+    `${resizedFolder}/${resizedImgName}` as unknown as string;
 
   /* check if requested image size is available */
   if (!fs.existsSync(imagePath)) {
@@ -29,14 +34,16 @@ const valdiationFn = (
     res.sendFile(resizedImgPath);
     console.log(`${resizedImgName} is cached`);
   } else {
-    res.locals.data = {
-      height,
-      resizedImgPath,
-      width,
+    resizeWithSharp(
+      imagename,
       imagePath,
-      resizedImgName,
-    };
-    next();
+      +width,
+      +height,
+      resizedImgPath
+    ) as unknown as string;
+    setTimeout(() => {
+      res.sendFile(resizedImgPath);
+    }, 400);
   }
 };
 

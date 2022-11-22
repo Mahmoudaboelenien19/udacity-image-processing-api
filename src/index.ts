@@ -11,7 +11,7 @@ app.get('/', (req: express.Request, res: express.Response): void => {
     `);
 });
 app.get('/api', (req: express.Request, res: express.Response): void => {
-  res.send('put height and width you want ');
+  res.status(200).send('put height and width you want ');
 });
 
 app.use('/api', images);

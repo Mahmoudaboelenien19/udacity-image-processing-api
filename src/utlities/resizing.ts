@@ -1,23 +1,21 @@
-import express from 'express';
 import sharp from 'sharp';
 
-const resizingFn = async (
-  req: express.Request,
-  res: express.Response
-): Promise<void> => {
-  const { resizedImgPath, imagePath, height, width, resizedImgName } =
-    res.locals.data;
-
+const resizeWithSharp = async (
+  imagename: string,
+  imagePath: string,
+  width: number,
+  height: number,
+  resizedImgPath: string
+) => {
   try {
     (await sharp(imagePath)
-      .resize(+width, +height)
+      .resize(width, height)
       .toFile(resizedImgPath)) as unknown as HTMLImageElement;
-    res.sendFile(resizedImgPath);
+    const resizedImgName = `${imagename}-${height}-${width}.jpg`;
     console.log(`${resizedImgName} is saved `);
   } catch (err) {
-    res.send('error');
     console.log(err);
   }
 };
 
-export default resizingFn;
+export default resizeWithSharp;

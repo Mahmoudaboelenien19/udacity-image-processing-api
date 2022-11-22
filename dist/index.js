@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
     `);
 });
 app.get('/api', (req, res) => {
-    res.send('put height and width you want ');
+    res.status(200).send('put height and width you want ');
 });
 app.use('/api', images_1.default);
 /* start express server */
