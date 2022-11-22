@@ -1,8 +1,6 @@
    ## Introduction:
 
-   this is the first project Image Processig Api .
-   
-   
+   this is the first project Image Processig Api .     
    I  use to build this project:-    
    
       1. TypeScript to compile to JavaScript
@@ -15,9 +13,6 @@
      npm  install 
 
 
-   ## URL Example
-    
-     
    ## How to resize :
     
    1. make sure that the requested image is inside images folder.
@@ -32,10 +27,9 @@
    6. if image is successfully resized ,you will get a message inside console to tell you the `imagename`
     is saved  for this example ``icelandwaterfall-200-200.jpg`` is saved.
    7. if the requested image has been already resized, you will get a message inside console to tell you 
-    `imagename` is cached for this example icelandwaterfall-200-200.jpg is cashed.
+    `imagename` is cached for this example `icelandwaterfall-200-200.jpg` is cashed.
 
-   
-   
+      
 
    ## Scripts:
    
