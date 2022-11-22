@@ -20,9 +20,7 @@
     2. in url add for imagename(the image you want to resize),width(the new image width),height(the new 
     image height) 
      For example :    
-     
-        http://localhost:3000/api/images?imagename=icelandwaterfall&height=200&width=200
-	
+    http://localhost:3000/api/images?imagename=icelandwaterfall&height=200&width=200
     3. if image is not found, you will get a message to tell you  that image name isn't available.
     4. if image height is not added or less than 1 ,you will get a message to tell you please put a correct 
     height value .
